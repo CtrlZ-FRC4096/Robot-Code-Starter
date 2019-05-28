@@ -21,7 +21,7 @@
              "type": "shell",
              "command": "",
              "windows": {
-                 "command": "Start-Process powershell {$host.ui.RawUI.WindowTitle = 'FRCwindow';py ${workspaceFolder}\\robot.py deploy --nc --skip-tests --no-version-check;  Write-Host 'BYEEE - Press Enter to Close' -ForegroundColor Green -BackgroundColor Black; Read-Host -Prompt ' '}"
+                 "command": "Start-Process powershell {$host.ui.RawUI.WindowTitle = 'FRCwindow';py '${workspaceFolder}\\robot.py' deploy --nc --skip-tests --no-version-check;  Write-Host 'BYEEE - Press Enter to Close' -ForegroundColor Green -BackgroundColor Black; Read-Host -Prompt ' '}"
              },
              "group": "none",
              "presentation": {
@@ -34,7 +34,7 @@
              "type": "shell",
              "command": "",
              "windows": {
-                 "command": "Start-Process powershell {$host.ui.RawUI.WindowTitle = 'FRCwindow';py ${workspaceFolder}\\robot.py sim;  Write-Host 'BYEEE - Press Enter to Close' -ForegroundColor Green -BackgroundColor Black; Read-Host -Prompt ' '}"
+                 "command": "Start-Process powershell {$host.ui.RawUI.WindowTitle = 'FRCwindow';py '${workspaceFolder}\\robot.py' sim;  Write-Host 'BYEEE - Press Enter to Close' -ForegroundColor Green -BackgroundColor Black; Read-Host -Prompt ' '}"
              },
              "group": "none",
              "presentation": {
