@@ -8,6 +8,6 @@
 	{
 		"key": "ctrl+shift+d",
 		"command": "workbench.action.tasks.runTask",
-		"args": "PyFRC: Run current project in the PyFRC simulator"
+		"args": "PyFRC: Debug robot.py with simulator"
 	 }
 ]
