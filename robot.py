@@ -1,4 +1,6 @@
 import wpilib
+import wpilib.drive
+import wpilib.interfaces
 
 
 class Robot(wpilib.TimedRobot):
@@ -6,8 +8,13 @@ class Robot(wpilib.TimedRobot):
 	Main robot class
 	"""
 	def robotInit(self):
-		pass
+		self.dt_motor_left = wpilib.VictorSP(0)
+		self.dt_motor_right = wpilib.VictorSP(1)
+		self.dt_motor_right.setInverted(True)
 
+		self.drive = wpilib.drive.DifferentialDrive(self.dt_motor_left, self.dt_motor_right)
+
+		self.xbox_controller = wpilib.XboxController(0)
 
 	def robotPeriodic(self):
 		pass
@@ -34,6 +41,9 @@ class Robot(wpilib.TimedRobot):
 
 	def teleopPeriodic(self):
 		pass
+		forward_val = self.xbox_controller.getY(wpilib.interfaces.GenericHID.Hand.kRightHand)
+		rotate_val = self.xbox_controller.getX(wpilib.interfaces.GenericHID.Hand.kLeftHand)
+		self.drive.arcadeDrive(forward_val, rotate_val)
 
 
 
